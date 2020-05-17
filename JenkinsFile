@@ -1,0 +1,19 @@
+pipeline{
+	agent any
+	stages{
+		stage('clean-install stage'){
+			steps{
+				withMaven(maven:'MVN_HOME'){
+					sh 'mvn clean install'
+				}
+			}
+		}
+		stage('test stage'){
+			steps{
+				withMaven(maven:'MVN_HOME'){
+					sh 'mvn test'
+				}
+			}
+		}
+	}
+}
