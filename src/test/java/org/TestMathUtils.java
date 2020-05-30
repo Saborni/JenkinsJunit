@@ -43,6 +43,7 @@ public class TestMathUtils {
 
 
     @Test
+	@Disabled
     @DisplayName("A failure test case")
     public void displaynamedemo(){
         Assertions.fail("This will fail");
