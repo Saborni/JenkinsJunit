@@ -7,7 +7,7 @@ pipeline{
 	stages{
 		stage ('Initialize') {
             steps {
-                sh '''
+                bat '''
                     echo "M2_HOME = ${M2_HOME}"
 					echo "JDK_HOME = ${JDK_HOME}"
                 ''' 
@@ -15,12 +15,12 @@ pipeline{
         }
 		stage('clean-install stage'){
 			steps{
-					sh 'mvn clean install'
+					bat 'mvn clean install'
 			}
 		}
 		stage('test stage'){
 			steps{
-					sh 'mvn test'
+					bat 'mvn test'
 			}
 		}
 	}
