@@ -1,9 +1,18 @@
 pipeline{
 	agent any
 	tools {
-        maven 'MVN_HOME' 
+        maven 'MVN_HOME'
+		jdk 'JDK_HOME'
     }
 	stages{
+		stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "M2_HOME = ${M2_HOME}"
+					echo "JDK_HOME = ${JDK_HOME}"
+                ''' 
+            }
+        }
 		stage('clean-install stage'){
 			steps{
 					sh 'mvn clean install'
