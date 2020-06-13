@@ -2,7 +2,6 @@ package org;
 
 import org.junit.jupiter.api.*;
 
-
 public class TestMathUtils {
 
     private MathUtils mathUtils;
